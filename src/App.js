@@ -8,10 +8,25 @@ import './App.css';
 
 const App = () => {
     const [backdrop, setBackdrop] = React.useState('default');
+    const [name, setName] = React.useState('Sagan');
+    const modules = {
+        module0: {
+            // States
+            backdrop,
+            // Actions
+            setBackdrop,
+        },
+        module1: {
+            // States
+            name,
+            // Actions
+            setName,
+        }
+    };
 
     return (
         <div className="App">
-            <GlobalContext.Provider value={{ backdrop, setBackdrop }}>
+            <GlobalContext.Provider value={modules}>
                 <ComponentA />
                 <ComponentB />
                 <ComponentC />

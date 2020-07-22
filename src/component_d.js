@@ -3,11 +3,11 @@ import { GlobalContext } from './context';
 
 
 const ComponentD = () => {
-    const { backdrop } = React.useContext(GlobalContext);
+    const { module0 } = React.useContext(GlobalContext);
 
     return (
         <div className="component-d">
-            <div>Component D {backdrop}</div>
+            <div>Component D {module0.backdrop}</div>
         </div>
     );
 };

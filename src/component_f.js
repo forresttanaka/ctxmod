@@ -3,15 +3,15 @@ import { GlobalContext } from './context';
 
 
 const ComponentF = () => {
-    const { backdrop, setBackdrop } = React.useContext(GlobalContext);
+    const { module0, module1 } = React.useContext(GlobalContext);
 
     const handleClick = () => {
-        setBackdrop('Backdrop F');
+        module0.setBackdrop('Backdrop F');
     };
 
     return (
         <div className="component-f">
-            <div>Component F {backdrop}</div>
+            <div>Component F {module0.backdrop} {module1.name}</div>
             <button onClick={handleClick}>Change</button>
         </div>
     );
