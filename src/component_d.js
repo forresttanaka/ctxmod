@@ -4,7 +4,7 @@ import NameControls from './name';
 
 const ComponentD = () => {
     return (
-        <div className="component-d">
+        <div className="component component--d">
             <h2>Component D</h2>
             <NameControls />
         </div>

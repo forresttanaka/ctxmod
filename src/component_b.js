@@ -8,7 +8,7 @@ const ComponentB = () => {
     const { moduleCounter } = React.useContext(GlobalContext);
 
     return (
-        <div className="component-b">
+        <div className="component component--b">
             <h2>Component B</h2>
             <div>Counter: {moduleCounter.counter}</div>
             <CounterControls />

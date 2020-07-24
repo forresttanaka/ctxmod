@@ -14,7 +14,7 @@ globalContextRegistry.register('moduleA', useModuleA);
 
 
 const ComponentA = () => (
-    <div className="component-a">
+    <div className="component component--a">
         <h2>Component A</h2>
     </div>
 );

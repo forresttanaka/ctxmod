@@ -21,46 +21,34 @@ button {
   font-size: 1.3rem;
 }
 
-.component-a {
-  margin: 50px;
+.component {
+  margin: 20px;
   padding: 20px;
+  border: 1px solid #404040;
+}
+
+.component--a {
   background-color: #f94;
-  border: 1px solid #404040;
 }
 
-.component-b {
-  margin: 50px;
-  padding: 20px;
+.component--b {
   background-color: #8f9;
-  border: 1px solid #404040;
 }
 
-.component-c {
-  margin: 50px;
-  padding: 20px;
+.component--c {
   background-color: #89f;
-  border: 1px solid #404040;
 }
 
-.component-d {
-  margin: 50px;
-  padding: 20px;
+.component--d {
   background-color: #c9f;
-  border: 1px solid #404040;
 }
 
-.component-e {
-  margin: 50px;
-  padding: 20px;
+.component--e {
   background-color: #fcc;
-  border: 1px solid #404040;
 }
 
-.component-f {
-  margin: 50px;
-  padding: 20px;
+.component--f {
   background-color: #ccc;
-  border: 1px solid #404040;
 }
 
 .counter-controls {

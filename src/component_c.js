@@ -7,7 +7,7 @@ const ComponentC = () => {
     const { moduleName } = React.useContext(GlobalContext);
 
     return (
-        <div className="component-c">
+        <div className="component component--c">
             <h2>Component C</h2>
             <div>Name: {moduleName.name || <i>none</i>}</div>
             <ComponentE />
