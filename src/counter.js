@@ -2,21 +2,21 @@
  * Module to demonstrate a counter and counter controls using the context registry.
  */
 import React from 'react';
-import { GlobalCtxmod, globalCtxmodRegistry } from './context';
+import { GlobalCtxmod, globalCtxmodRegistry } from './ctxmod';
 
 
 /**
  * Reducer function for the counter.
  */
-const module1Initial = 0;
-const module1Reducer = (counter, action) =>{
+const counterInitial = 0;
+const counterReducer = (counter, action) =>{
     switch(action) {
         case 'increment':
             return counter + 1;
         case 'decrement':
             return counter - 1;
         case 'reset':
-            return module1Initial;
+            return counterInitial;
         default:
             return counter;
     }
@@ -26,8 +26,8 @@ const module1Reducer = (counter, action) =>{
 /**
  * Custom hook that returns the states and actions associated with the counter.
  */
-const useModuleCounter = () => {
-    const [counter, dispatch] = React.useReducer(module1Reducer, module1Initial);
+const useCtxmodCounter = () => {
+    const [counter, dispatch] = React.useReducer(counterReducer, counterInitial);
 
     const increment = () => {
         dispatch('increment');
@@ -53,20 +53,20 @@ const useModuleCounter = () => {
     }
 };
 
-globalCtxmodRegistry.register('moduleCounter', useModuleCounter);
+globalCtxmodRegistry.register('ctxmodCounter', useCtxmodCounter);
 
 
 /**
  * Component for the counter controls.
  */
 const CounterControls = () => {
-    const { moduleCounter } = React.useContext(GlobalCtxmod);
+    const { ctxmodCounter } = React.useContext(GlobalCtxmod);
 
     return (
         <div className="counter-controls">
-            <button onClick={() => moduleCounter.increment()}>Increment</button>
-            <button onClick={() => moduleCounter.decrement()}>Decrement</button>
-            <button onClick={() => moduleCounter.reset()}>Reset</button>
+            <button onClick={() => ctxmodCounter.increment()}>Increment</button>
+            <button onClick={() => ctxmodCounter.decrement()}>Decrement</button>
+            <button onClick={() => ctxmodCounter.reset()}>Reset</button>
         </div>
     )
 };

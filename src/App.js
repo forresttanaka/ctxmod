@@ -2,7 +2,7 @@ import React from 'react';
 import ComponentA from './component_a';
 import ComponentB from './component_b';
 import ComponentC from './component_c';
-import { GlobalCtxmod, useGlobalContext } from './context';
+import { GlobalCtxmod, useGlobalContext } from './ctxmod';
 import './App.css';
 
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import { GlobalCtxmod } from './context';
+import { GlobalCtxmod } from './ctxmod';
 
 
 const ComponentA = () => {
-    const { moduleCounter, moduleName } = React.useContext(GlobalCtxmod);
+    const { ctxmodCounter, moduleName } = React.useContext(GlobalCtxmod);
 
     return (
         <div className="component component--a">
             <h2>Component A</h2>
-            <div>Counter: {moduleCounter.counter}</div>
+            <div>Counter: {ctxmodCounter.counter}</div>
             <div>Name: {moduleName.name || <i>none</i>}</div>
         </div>
     );

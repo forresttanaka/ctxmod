@@ -1,6 +1,6 @@
 import React from 'react';
 import ComponentE from './component_e';
-import { GlobalCtxmod } from './context';
+import { GlobalCtxmod } from './ctxmod';
 
 
 const ComponentC = () => {

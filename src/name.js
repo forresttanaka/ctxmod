@@ -2,7 +2,7 @@
  * Module to demonstrate a counter and counter controls using the context registry.
  */
 import React from 'react';
-import { GlobalCtxmod, globalCtxmodRegistry } from './context';
+import { GlobalCtxmod, globalCtxmodRegistry } from './ctxmod';
 
 
 /**
