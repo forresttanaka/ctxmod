@@ -1,5 +1,24 @@
 .App {
   text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+button {
+  font-size: 1.3rem;
+}
+
+.name-controls input {
+  margin-right: 5px;
+  font-size: 1.3rem;
 }
 
 .component-a {
@@ -42,4 +61,15 @@
   padding: 20px;
   background-color: #ccc;
   border: 1px solid #404040;
+}
+
+.counter-controls {
+  display: flex;
+  margin: 5px 0;
+  justify-content: center;
+}
+
+.counter-controls button {
+  margin-right: 2px;
+  margin-left: 2px;
 }

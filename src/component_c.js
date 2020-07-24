@@ -4,11 +4,12 @@ import { GlobalContext } from './context';
 
 
 const ComponentC = () => {
-    const { moduleA } = React.useContext(GlobalContext);
+    const { moduleName } = React.useContext(GlobalContext);
 
     return (
         <div className="component-c">
-            Component C department {moduleA.department}
+            <h2>Component C</h2>
+            <div>Name: {moduleName.name || <i>none</i>}</div>
             <ComponentE />
         </div>
     );

@@ -10,16 +10,13 @@ const useModuleA = () => {
     }
 };
 
-
 globalContextRegistry.register('moduleA', useModuleA);
 
 
-const ComponentA = () => {
-    return (
-        <div className="component-a">
-            Component A
-        </div>
-    );
-};
+const ComponentA = () => (
+    <div className="component-a">
+        <h2>Component A</h2>
+    </div>
+);
 
 export default ComponentA;

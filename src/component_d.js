@@ -1,13 +1,12 @@
 import React from 'react';
-import { GlobalContext } from './context';
+import NameControls from './name';
 
 
 const ComponentD = () => {
-    const { module0 } = React.useContext(GlobalContext);
-
     return (
         <div className="component-d">
-            <div>Component D {module0.backdrop}</div>
+            <h2>Component D</h2>
+            <NameControls />
         </div>
     );
 };

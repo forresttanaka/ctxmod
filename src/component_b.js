@@ -1,19 +1,17 @@
 import React from 'react';
 import ComponentD from './component_d';
 import { GlobalContext } from './context';
+import CounterControls from './counter';
 
 
 const ComponentB = () => {
-    const { moduleA } = React.useContext(GlobalContext);
-
-    const handleClick = () => {
-        moduleA.setDepartment('sales');
-    };
+    const { moduleCounter } = React.useContext(GlobalContext);
 
     return (
         <div className="component-b">
-            <div>Component B Department {moduleA.department}</div>
-            <button onClick={handleClick}>Change</button>
+            <h2>Component B</h2>
+            <div>Counter: {moduleCounter.counter}</div>
+            <CounterControls />
             <ComponentD />
         </div>
     );

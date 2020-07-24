@@ -1,18 +1,16 @@
 import React from 'react';
 import { GlobalContext } from './context';
+import CounterControls from './counter';
 
 
 const ComponentF = () => {
-    const { module0, module1 } = React.useContext(GlobalContext);
-
-    const handleClick = () => {
-        module0.setBackdrop('Backdrop F');
-    };
+    const { moduleCounter } = React.useContext(GlobalContext);
 
     return (
         <div className="component-f">
-            <div>Component F {module0.backdrop} {module1.name}</div>
-            <button onClick={handleClick}>Change</button>
+            <h2>Component F</h2>
+            <div>Counter: {moduleCounter.counter}</div>
+            <CounterControls />
         </div>
     );
 };
