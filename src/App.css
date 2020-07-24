@@ -77,3 +77,14 @@ button {
   margin: 5px 0;
   justify-content: center;
 }
+
+.annunciator {
+  margin: 10px auto;
+  width: 32px;
+  height: 32px;
+  background-color: black;
+}
+
+.annunciator.annunciator--on {
+  background-color: #fc0;
+}
