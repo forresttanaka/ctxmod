@@ -2,7 +2,7 @@
  * Module to demonstrate a counter and counter controls using the context registry.
  */
 import React from 'react';
-import { GlobalCtxmod, globalCtxmodRegistry } from './ctxmod';
+import { GlobalCtxmodContext, globalCtxmodRegistry } from './ctxmod';
 
 
 /**
@@ -18,7 +18,7 @@ const useModuleName = () => {
     }
 };
 
-globalCtxmodRegistry.register('moduleName', useModuleName);
+globalCtxmodRegistry.register('ctxmodName', useModuleName);
 
 
 /**
@@ -26,21 +26,23 @@ globalCtxmodRegistry.register('moduleName', useModuleName);
  */
 const NameControls = () => {
     const [enteredName, setEnteredName] = React.useState('');
-    const { moduleName } = React.useContext(GlobalCtxmod);
+    const { ctxmodName } = React.useContext(GlobalCtxmodContext);
 
     const handleChange = (e) => {
         setEnteredName(e.target.value);
     }
 
+    // Need to clear both the current contents of the input field as well as the name in the
+    // ctxmod.
     const handleClear = () => {
         setEnteredName('');
-        moduleName.setName('');
+        ctxmodName.setName('');
     }
 
     return (
         <div className="name-controls">
             <input type="text" value={enteredName} onChange={handleChange} />
-            <button onClick={() => moduleName.setName(enteredName)}>Set</button>
+            <button onClick={() => ctxmodName.setName(enteredName)}>Set</button>
             <button onClick={handleClear}>Clear</button>
         </div>
     )

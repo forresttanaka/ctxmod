@@ -1,11 +1,12 @@
 import React from 'react';
-import { GlobalCtxmod } from './ctxmod';
+import { GlobalCtxmodContext } from './ctxmod';
 import CounterControls from './counter';
 import { CBranchContext } from './component_c';
 
 
 const ComponentF = () => {
-    const { ctxmodCounter } = React.useContext(GlobalCtxmod);
+    // Use the global ctxmod context as well as the C component context.
+    const { ctxmodCounter } = React.useContext(GlobalCtxmodContext);
     const { annunciated } = React.useContext(CBranchContext);
 
     return (

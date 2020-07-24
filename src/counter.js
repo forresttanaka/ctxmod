@@ -2,7 +2,7 @@
  * Module to demonstrate a counter and counter controls using the context registry.
  */
 import React from 'react';
-import { GlobalCtxmod, globalCtxmodRegistry } from './ctxmod';
+import { GlobalCtxmodContext, globalCtxmodRegistry } from './ctxmod';
 
 
 /**
@@ -60,7 +60,7 @@ globalCtxmodRegistry.register('ctxmodCounter', useCtxmodCounter);
  * Component for the counter controls.
  */
 const CounterControls = () => {
-    const { ctxmodCounter } = React.useContext(GlobalCtxmod);
+    const { ctxmodCounter } = React.useContext(GlobalCtxmodContext);
 
     return (
         <div className="counter-controls">

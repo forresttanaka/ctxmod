@@ -2,21 +2,21 @@ import React from 'react';
 import ComponentA from './component_a';
 import ComponentB from './component_b';
 import ComponentC from './component_c';
-import { GlobalCtxmod, useGlobalContext } from './ctxmod';
+import { GlobalCtxmodContext, useGlobalCtxmodContext } from './ctxmod';
 import './App.css';
 
 
 const App = () => {
-    const modules = useGlobalContext();
+    const ctxmods = useGlobalCtxmodContext();
 
     return (
         <div className="App">
             <h1>React Modular Contexts</h1>
-            <GlobalCtxmod.Provider value={modules}>
+            <GlobalCtxmodContext.Provider value={ctxmods}>
                 <ComponentA />
                 <ComponentB />
                 <ComponentC />
-            </GlobalCtxmod.Provider>
+            </GlobalCtxmodContext.Provider>
         </div>
     );
 }
