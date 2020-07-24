@@ -1,10 +1,10 @@
 import React from 'react';
 import ComponentE from './component_e';
-import { GlobalContext } from './context';
+import { GlobalCtxmod } from './context';
 
 
 const ComponentC = () => {
-    const { moduleName } = React.useContext(GlobalContext);
+    const { moduleName } = React.useContext(GlobalCtxmod);
 
     return (
         <div className="component component--c">

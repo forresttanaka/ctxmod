@@ -2,7 +2,7 @@ import React from 'react';
 import ComponentA from './component_a';
 import ComponentB from './component_b';
 import ComponentC from './component_c';
-import { GlobalContext, useGlobalContext } from './context';
+import { GlobalCtxmod, useGlobalContext } from './context';
 import './App.css';
 
 
@@ -11,12 +11,12 @@ const App = () => {
 
     return (
         <div className="App">
-            <h1>React Pluggable Contexts</h1>
-            <GlobalContext.Provider value={modules}>
+            <h1>React Modular Contexts</h1>
+            <GlobalCtxmod.Provider value={modules}>
                 <ComponentA />
                 <ComponentB />
                 <ComponentC />
-            </GlobalContext.Provider>
+            </GlobalCtxmod.Provider>
         </div>
     );
 }

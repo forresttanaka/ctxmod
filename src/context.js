@@ -3,13 +3,14 @@ import React from 'react';
 
 /**
  * Manages the context registry that allows React components at any level of the hierarchy to
- * access the same set of global states and actions.
+ * access the same set of states and actions regardless of where they appear within that hierarchy
+ * and without prop drilling.
  *
  * The <App> component owns the global context, but other portions of the web app can establish
  * their own context for their own sub hierarchies to share.
  */
 
-class ContextRegistryCore {
+class CtxmodRegistryCore {
     constructor() {
         this._registry = {};
     }
@@ -44,14 +45,16 @@ class ContextRegistryCore {
 
 
 /**
- * Global context registry must be imported by each module needing to register their own module.
+ * Global context registry must be imported by each module needing to register their own context
+ * modules to the global context.
  */
-export const globalContextRegistry = new ContextRegistryCore();
+export const globalCtxmodRegistry = new CtxmodRegistryCore();
+
 
 /**
- * Global context itself imported by global context consumers.
+ * Global context imported by global context consumers.
  */
-export const GlobalContext = React.createContext(null);
+export const GlobalCtxmod = React.createContext(null);
 
 
 /**
@@ -63,8 +66,8 @@ export const useGlobalContext = () => {
 
     // Add the objects containing each registered module's states and actions. Each module is a
     // custom hook that must be called unconditionally in this fuction.
-    for (const retrieve of globalContextRegistry.retrieve()) {
-        allModules[retrieve.name] = retrieve.module();
+    for (const ctxmodName of globalCtxmodRegistry.retrieve()) {
+        allModules[ctxmodName.name] = ctxmodName.module();
     }
 
     return allModules;

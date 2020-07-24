@@ -1,11 +1,11 @@
 import React from 'react';
 import ComponentD from './component_d';
-import { GlobalContext } from './context';
+import { GlobalCtxmod } from './context';
 import CounterControls from './counter';
 
 
 const ComponentB = () => {
-    const { moduleCounter } = React.useContext(GlobalContext);
+    const { moduleCounter } = React.useContext(GlobalCtxmod);
 
     return (
         <div className="component component--b">

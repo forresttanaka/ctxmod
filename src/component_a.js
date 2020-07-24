@@ -1,22 +1,17 @@
 import React from 'react';
-import { globalContextRegistry } from './context';
+import { GlobalCtxmod } from './context';
 
 
-const useModuleA = () => {
-    const [department, setDepartment] = React.useState('marketing');
-    return {
-        department,
-        setDepartment,
-    }
+const ComponentA = () => {
+    const { moduleCounter, moduleName } = React.useContext(GlobalCtxmod);
+
+    return (
+        <div className="component component--a">
+            <h2>Component A</h2>
+            <div>Counter: {moduleCounter.counter}</div>
+            <div>Name: {moduleName.name || <i>none</i>}</div>
+        </div>
+    );
 };
-
-globalContextRegistry.register('moduleA', useModuleA);
-
-
-const ComponentA = () => (
-    <div className="component component--a">
-        <h2>Component A</h2>
-    </div>
-);
 
 export default ComponentA;

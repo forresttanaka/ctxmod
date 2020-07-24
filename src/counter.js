@@ -2,7 +2,7 @@
  * Module to demonstrate a counter and counter controls using the context registry.
  */
 import React from 'react';
-import { GlobalContext, globalContextRegistry } from './context';
+import { GlobalCtxmod, globalCtxmodRegistry } from './context';
 
 
 /**
@@ -28,28 +28,45 @@ const module1Reducer = (counter, action) =>{
  */
 const useModuleCounter = () => {
     const [counter, dispatch] = React.useReducer(module1Reducer, module1Initial);
+
+    const increment = () => {
+        dispatch('increment');
+    };
+
+    const decrement = () => {
+        dispatch('decrement');
+    };
+
+    const reset = () => {
+        dispatch('reset');
+    };
+
     return {
         // states
         counter,
         // actions
-        dispatch,
+        increment,
+        decrement,
+        reset,
+        // You could alternatively simply return `dispatch`, so consumers call `dispatch` for this
+        // module, passing it the reducer action.
     }
 };
 
-globalContextRegistry.register('moduleCounter', useModuleCounter);
+globalCtxmodRegistry.register('moduleCounter', useModuleCounter);
 
 
 /**
  * Component for the counter controls.
  */
 const CounterControls = () => {
-    const { moduleCounter } = React.useContext(GlobalContext);
+    const { moduleCounter } = React.useContext(GlobalCtxmod);
 
     return (
         <div className="counter-controls">
-            <button onClick={() => moduleCounter.dispatch('increment')}>Increment</button>
-            <button onClick={() => moduleCounter.dispatch('decrement')}>Decrement</button>
-            <button onClick={() => moduleCounter.dispatch('reset')}>Reset</button>
+            <button onClick={() => moduleCounter.increment()}>Increment</button>
+            <button onClick={() => moduleCounter.decrement()}>Decrement</button>
+            <button onClick={() => moduleCounter.reset()}>Reset</button>
         </div>
     )
 };
